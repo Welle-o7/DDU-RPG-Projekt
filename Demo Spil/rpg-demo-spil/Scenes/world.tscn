@@ -1,3 +1,171 @@
 [gd_scene format=3 uid="uid://dhs2nf1fjl512"]
 
+[ext_resource type="Texture2D" uid="uid://d2nyj002fvvru" path="res://icon.svg" id="1_a02cp"]
+[ext_resource type="Texture2D" uid="uid://v3j8e8rsmpfj" path="res://Misc/pokemon battle background.jpg" id="3_5a7ea"]
+[ext_resource type="Texture2D" uid="uid://bgby2q5vy0ocb" path="res://Assets/UI assets/Temp Attack Btn.png" id="3_8j60k"]
+[ext_resource type="Texture2D" uid="uid://dv0h68c5jwl4g" path="res://Assets/UI assets/Temp Block Btn.png" id="4_o06y3"]
+[ext_resource type="Texture2D" uid="uid://f3klpefcqr3c" path="res://Assets/UI assets/Temp Rest Btn.png" id="5_k7acu"]
+[ext_resource type="Texture2D" uid="uid://c2dvn04jxbagv" path="res://Assets/UI assets/Temp INV Btn.png" id="6_5v1tr"]
+[ext_resource type="Texture2D" uid="uid://by6i23cul6sit" path="res://Assets/UI assets/Temp durability bar static.jpg" id="8_k7acu"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_o06y3"]
+script/source = "using Godot;
+using System;
+
+public partial class Combat : Node2D
+{
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+	}
+
+}
+
+"
+
 [node name="World" type="Node2D" unique_id=564158512]
+script = SubResource("CSharpScript_o06y3")
+
+[node name="PokemonBattleBackground" type="Sprite2D" parent="." unique_id=535189237]
+position = Vector2(579.00006, 238.00003)
+scale = Vector2(1.45, 1.45)
+texture = ExtResource("3_5a7ea")
+region_enabled = true
+region_rect = Rect2(0, 133.11578, 800, 346.88422)
+
+[node name="Control" type="Control" parent="." unique_id=662777619]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=94787414]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 486.0
+offset_right = 31.0
+offset_bottom = 526.0
+scale = Vector2(29.327822, 4.2494917)
+color = Color(0.40705615, 0.40705618, 0.40705615, 1)
+
+[node name="AttackContainer" type="Container" parent="Control" unique_id=975572589]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 424.0
+offset_top = 499.99997
+offset_right = 424.0
+offset_bottom = 499.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.037683107, 0.029826824)
+
+[node name="AttackTextureButton" type="TextureButton" parent="Control/AttackContainer" unique_id=840774960]
+layout_mode = 2
+texture_normal = ExtResource("3_8j60k")
+
+[node name="DefendContainer" type="Container" parent="Control" unique_id=442886299]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 595.0
+offset_top = 499.99997
+offset_right = 595.0
+offset_bottom = 499.99997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.036608312, 0.030020481)
+
+[node name="DefendTextureButton" type="TextureButton" parent="Control/DefendContainer" unique_id=731675677]
+layout_mode = 2
+texture_normal = ExtResource("4_o06y3")
+
+[node name="InventoryContainer" type="Container" parent="Control" unique_id=559482096]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 594.0
+offset_top = 576.0
+offset_right = 594.0
+offset_bottom = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.036755454, 0.030026244)
+
+[node name="InventoryTextureButton" type="TextureButton" parent="Control/InventoryContainer" unique_id=324068062]
+layout_mode = 2
+texture_normal = ExtResource("5_k7acu")
+
+[node name="RestContainer" type="Container" parent="Control" unique_id=1786193075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 422.00003
+offset_top = 576.00006
+offset_right = 422.00003
+offset_bottom = 576.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.038306195, 0.030282998)
+
+[node name="RestTextureButton" type="TextureButton" parent="Control/RestContainer" unique_id=55396752]
+layout_mode = 2
+texture_normal = ExtResource("6_5v1tr")
+
+[node name="VSeparator" type="VSeparator" parent="Control" unique_id=1663469115]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 490.0
+offset_right = 762.0
+offset_bottom = 530.0
+scale = Vector2(4.15644, 4.1867423)
+
+[node name="VSeparator2" type="VSeparator" parent="Control" unique_id=926601306]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 487.00003
+offset_right = 382.0
+offset_bottom = 711.947
+scale = Vector2(4.150986, 0.7868522)
+
+[node name="XPBar" type="TextureProgressBar" parent="Control" unique_id=1717188137]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 613.0
+offset_right = 135.0
+offset_bottom = 741.0
+scale = Vector2(2.7428844, 0.20864856)
+texture_under = ExtResource("1_a02cp")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=37553806]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 645.0
+offset_right = 2071.0
+offset_bottom = 832.0
+rotation = -1.5707964
+scale = Vector2(0.16335896, 0.2018776)
+texture_under = ExtResource("8_k7acu")
+
+[node name="WeaponDisplayBG" type="ColorRect" parent="Control" unique_id=2012632500]
+layout_mode = 0
+offset_left = 777.0
+offset_top = 553.0
+offset_right = 874.0
+offset_bottom = 639.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/WeaponDisplayBG" unique_id=980857127]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 86.0
